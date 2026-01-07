@@ -1,0 +1,14 @@
+<h2>Finalize Your Event Order</h2>
+<form method="POST">
+    {% csrf_token %}
+    <label>Event Address:</label><br>
+    <textarea name="address" required></textarea><br><br>
+    
+    <label>Payment Method:</label>
+    <select name="payment_method">
+        <option value="Cash">Cash</option>
+        <option value="UPI">UPI (Scan to Pay)</option>
+    </select><br><br>
+    
+    <button type="submit">Place Order</button>
+</form>

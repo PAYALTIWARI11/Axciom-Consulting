@@ -1,0 +1,16 @@
+<style>
+    .item-card { border: 1px solid #ddd; padding: 15px; margin: 10px; display: inline-block; width: 200px; }
+    .btn-add { background-color: #28a745; color: white; padding: 5px 10px; text-decoration: none; }
+</style>
+
+<h2>Technical Event Items</h2>
+<div class="container">
+    {% for item in items %}
+    <div class="item-card">
+        <h3>{{ item.name }}</h3>
+        <p>{{ item.vendor.name }}</p>
+        <p>Price: ${{ item.price }}</p>
+        <a href="{% url 'add_to_cart' item.id %}" class="btn-add">Add to Cart</a>
+    </div>
+    {% endfor %}
+</div>

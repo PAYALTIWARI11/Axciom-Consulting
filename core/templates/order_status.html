@@ -1,0 +1,17 @@
+<h2>Your Bookings</h2>
+<table>
+    <tr>
+        <th>Order ID</th>
+        <th>Date</th>
+        <th>Status</th>
+        <th>Total</th>
+    </tr>
+    {% for order in orders %}
+    <tr>
+        <td>#{{ order.id }}</td>
+        <td>{{ order.created_at }}</td>
+        <td><span class="badge">{{ order.status }}</span></td>
+        <td>${{ order.total_amount }}</td>
+    </tr>
+    {% endfor %}
+</table>
